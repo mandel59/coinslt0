@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Ryusei Yamaguchi" />
+  <title>漢字の闇</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">漢字の闇</h1>
+  <p class="author">
+Ryusei Yamaguchi
+  </p>
+  <p class="date">2014-06-16 coinsLT #0</p>
+</div>
+<div id="about-ryusei" class="slide section level1">
+<h1>About Ryusei</h1>
+<ul class="incremental">
+<li>coins11 （ACでない）</li>
+<li>a phantom WORDian</li>
+<li>SCORE―Symbolic Computation Research Group</li>
+<li><a href="https://twitter.com/mandel59">Twitter mandel59</a></li>
+<li>文字と記号の人</li>
+</ul>
+</div>
+<div id="情報学類-先輩の成果物" class="slide section level1">
+<h1>情報学類 先輩の成果物</h1>
+<ul class="incremental">
+<li>SoftEther by 登 大遊, 2007年卒</li>
+<li>Ruby by Matz, 1990年卒</li>
+<li>LINE by 森川 亮, 1989年卒</li>
+</ul>
+</div>
+<div id="line" class="slide section level1">
+<h1>LINE</h1>
+<div class="figure">
+<img src="./images/強力なUnicode.png" alt="LINEでアカウントが死ぬくらい強力なUnicode下さい" /><p class="caption">LINEでアカウントが死ぬくらい強力なUnicode下さい</p>
+</div>
+<p><a href="http://www.bing.com/search?q=LINE+Unicode">🔍 LINE+Unicode</a></p>
+</div>
+<div id="強力なunicode" class="slide section level1">
+<h1>強力なUnicode</h1>
+<ul class="incremental">
+<li>特殊なメッセージを送ることでLINEクライアントを重くする</li>
+<li>相手は死ぬ</li>
+</ul>
+</div>
+<div id="unicode-is-何" class="slide section level1">
+<h1>Unicode is 何</h1>
+<ul>
+<li>ユニコードは、すべての文字に固有の番号を付与します</li>
+<li>プラットフォームには依存しません</li>
+<li>プログラムにも依存しません</li>
+<li>言語にも依存しません</li>
+</ul>
+<p>――<a href="http://www.unicode.org/standard/translations/japanese.html">What is Unicode in Japanese</a></p>
+</div>
+<div id="要は" class="slide section level1">
+<h1>要は</h1>
+<p>世界中の文字を収録した符号化文字集合</p>
+</div>
+<div id="すべての文字" class="slide section level1">
+<h1>すべての文字</h1>
+<ul class="incremental">
+<li>ラテン文字 a, b, c, ...</li>
+<li>ギリシャ文字 α, β, γ, ...</li>
+<li>キリル文字 а, б, в, ...</li>
+<li>グルジア文字 ა, ბ, გ, ...</li>
+<li>ルーン文字 ᚠ, ᚢ, ᚦ, ...</li>
+<li>タイ文字 ก, ข, ค, ...</li>
+<li>かな あ, い, う, ...</li>
+<li>絵文字 😂, 🍺, 💩 ...</li>
+<li>漢字</li>
+</ul>
+</div>
+<div id="cjk-unified-ideographs" class="slide section level1">
+<h1>CJK Unified Ideographs</h1>
+<div class="figure">
+<img src="./images/Unicode_CJKV.png" alt="Unicode 6.3 Character Code Charts" /><p class="caption">Unicode 6.3 Character Code Charts</p>
+</div>
+<p><a href="http://www.unicode.org/charts/">Unicode 6.3 Character Code Charts</a></p>
+</div>
+<div id="unicodeに漢字どれくらいあるのっと" class="slide section level1">
+<h1>Unicodeに漢字どれくらいあるのっと</h1>
+<ul class="incremental">
+<li>CJK Unified Ideographs (BMP) : 20,902 + 22 + 8 + 8 + 1</li>
+<li>CJK Compatibility Ideographs (BMP) : 12 (互換漢字除く)</li>
+<li>CJK Extension-A (BMP) : 6,582</li>
+<li>CJK Extension-B (SIP) : 42,711</li>
+<li>CJK Extension-C (SIP) : 4,149</li>
+<li>CJK Extension-D (SIP) : 222</li>
+<li>合計 74,617 字 (内 beyond-BMP 47,082字)</li>
+<li>まだ増える!!</li>
+</ul>
+</div>
+<div id="ideographic-rapporteur-group" class="slide section level1">
+<h1>Ideographic Rapporteur Group</h1>
+<ul class="incremental">
+<li>Unicodeに追加すべき漢字について</li>
+<li>いろいろ調査し</li>
+<li>アドバイスしているグループ</li>
+</ul>
+</div>
+<div id="難読漢字の歌" class="slide section level1">
+<h1>難読漢字の歌</h1>
+<ul>
+<li>閄（ものかげからきゅうにとびだしてひとをおどろかせるときにはっするこえ）に</li>
+<li>ビックリして辺りを 𥇛（きょろきょろみまわす）</li>
+<li>䁶（まばたきしない）まま何度も 𠱐（わらおうとする）と</li>
+<li>𥆞（めがまわる）ほどの 𫙹（ブリザード）で 𠤾（ふねがしずむ）から</li>
+<li>𩏊（せまりくるあらなみ）をひたすら耐えるのさ 狷（こころがせまい）僕らだから</li>
+</ul>
+<p>――<a href="http://dic.nicovideo.jp/a/%E3%81%AA%E3%82%93%E3%81%A0%E3%81%8B%E3%81%A8%E3%81%A3%E3%81%A6%E3%82%82!%E3%81%84%E3%81%84%E3%81%8B%E3%82%93%E3%81%98">なんだかとっても!いいかんじ</a>, 2008年</p>
+<p><a href="http://www.nicovideo.jp/watch/sm3604366">👉 ニコニコ動画</a></p>
+</div>
+<div id="unicodeによって" class="slide section level1">
+<h1>Unicodeによって</h1>
+<ul class="incremental">
+<li>歌詞が全部書けるようになった</li>
+<li>……<img src="./images/sayunu_gundam.png" alt="ガンダム" />（ガンダム）以外は</li>
+<li>さすがに創作漢字はUnicode収録されない……?</li>
+</ul>
+</div>
+<div id="ところで" class="slide section level1">
+<h1>ところで</h1>
+<ul class="incremental">
+<li>粍, 碼, 鉑</li>
+<li>それぞれ ミリメートル, ヤード, プラチナ と読む</li>
+<li>訓が外来語の漢字はそれなりにあるが</li>
+<li>なぜ <img src="./images/u2b679.png" alt="𫙹" /> (U+2B679) がブリザードなのか</li>
+</ul>
+</div>
+<div id="𫙹" class="slide section level1">
+<h1>𫙹</h1>
+<div class="figure">
+<img src="./images/Blizzard.png" alt="魚嵐（架空の漢字風）でブリザードだろ。金鹿（これも架空の漢字風）でミナゴロシ。ともに東京連合だし、茨城に支部があったかはしらねー。なんだウオアラシって…" /><p class="caption">魚嵐（架空の漢字風）でブリザードだろ。金鹿（これも架空の漢字風）でミナゴロシ。ともに東京連合だし、茨城に支部があったかはしらねー。なんだウオアラシって…</p>
+</div>
+<p><a href="http://bakusai.com/thr_res_show/acode=3/bid=877/tid=2276168/rid=119090903/word=%83U%81%5B%83h/">魚嵐（架空の漢字風）でブリザー…水戸連合｜爆サイ.com関東版</a></p>
+</div>
+<div id="事実" class="slide section level1">
+<h1>事実</h1>
+<ul class="incremental">
+<li>族のグループ名由来の創作漢字がUnicodeに収録されている</li>
+<li>「鏕」は架空の漢字じゃないです（「鏖」の異体字）</li>
+<li>どうしてこうなった</li>
+</ul>
+</div>
+<div id="想定される経路" class="slide section level1">
+<h1>想定される経路</h1>
+<ul class="incremental">
+<li>斎賀秀夫 (1978). 『漢字と遊ぶ―現代漢字考現学』 毎日新聞社</li>
+<li>↑ 東京都板橋区の塀の落書き「𫙹」が紹介される</li>
+<li>篠崎晃雄 (1982). 『おもしろいサカナの雑学』 新人物往来社</li>
+<li>↑ 「𫙹」が記載される</li>
+<li>今昔文字鏡（漢字に特化した商用の符号化文字集合）</li>
+<li>↑ 『おもしろいサカナの雑学』を典拠に𫙹を収録する</li>
+</ul>
+</div>
+<div id="そしてunicodeへ" class="slide section level1">
+<h1>そしてUnicodeへ……</h1>
+<div class="figure">
+<img src="./images/Blizzard-source.jpeg" alt="IRG N1225 Part1 JMK evidences for CJK C1 43ページ" /><p class="caption">IRG N1225 Part1 JMK evidences for CJK C1 43ページ</p>
+</div>
+<p><a href="http://appsrv.cse.cuhk.edu.hk/~irg/irg/irg26/IRG26.htm">Documents for IRG26</a></p>
+</div>
+<div id="おわり" class="slide section level1">
+<h1>おわり</h1>
+</div>
+<div id="おまけ-イシミツ" class="slide section level1">
+<h1>おまけ イシミツ</h1>
+<div class="figure">
+<img src="http://gabuttoshop.com/upload/save_image/07172239_50056b2cdf778.jpg" alt="イシミツ" /><p class="caption">イシミツ</p>
+</div>
+</div>
+<div id="おまけ-イシミツ-1" class="slide section level1">
+<h1>おまけ イシミツ</h1>
+<ul class="incremental">
+<li>白土三平『栬𨊂𠎁潢』</li>
+<li>栬𨊂𠎁潢は「忍びいろは」の暗号文</li>
+<li>𨊂, 𠎁という漢字は存在しない</li>
+<li>この作品が国会図書館に収蔵されているためにJIS規格入りした</li>
+<li>当然Unicodeにも入った</li>
+</ul>
+</div>
+</body>
+</html>
